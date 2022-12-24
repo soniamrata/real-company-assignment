@@ -1,27 +1,32 @@
 const mongoose=require("mongoose")
-const objectId = mongoose.type.objectId
+const ObjectId = mongoose.Schema.Types.ObjectId
 
 const cardSchema = new mongoose.Schema({
 
     cardNumber  :{
-        type:string
+        type:String
  },
     cardType :{
         type:String
     } ,
     customerName:{
-        type:tring
+        type:String
     },
     status  :{
-        type:string,
-        defaut: Active
+        type:String,
+        defaut: "ACTIVE"
     },
     vision:{
-        type:string
+        type:String
     },
     customerID:{
         type:String,
         ref:"customer"
     },
-},{timestamps:true         
+},{timestamps:true  
+    
+    
+
 })
+
+module.exports=new mongoose.model("card",cardSchema)

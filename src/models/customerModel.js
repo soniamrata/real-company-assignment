@@ -1,5 +1,5 @@
 const mongoose=require("mongoose")
-const objectId = mongoose.type.objectId
+
 
 const customerSchema = new mongoose.Schema({
    
@@ -14,7 +14,8 @@ const customerSchema = new mongoose.Schema({
         length:10
     },
     DOB : {
-        type:date()
+        type:Date
+
     },
     emailID :{
         type:String,
